@@ -23,19 +23,18 @@ android {
 
 }
 
-/*
 afterEvaluate {
     publishing {
         publications {
-            create<MavenPublication>("release") {
-                from(components["release"])
+            release(MavenPublication) {
+                from components.findByName("release")
                 groupId = 'com.github.jarryleo'
                 artifactId = 'colorpicker'
-                version = '1.0.1'
+                version = '1.0.2'
             }
         }
     }
-}*/
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
