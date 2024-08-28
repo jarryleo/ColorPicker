@@ -11,11 +11,12 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import top.defaults.logger.BuildConfig;
 import top.defaults.logger.Logger;
 
 public class ColorPickerView extends LinearLayout implements ColorObservable {
 
-    private ColorWheelView colorWheelView;
+    private final ColorWheelView colorWheelView;
     private BrightnessSliderView brightnessSliderView;
     private AlphaSliderView alphaSliderView;
     private ColorObservable observableOnDuty;

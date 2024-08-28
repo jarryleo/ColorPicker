@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="8dp">
 
     <top.defaults.colorpicker.ColorPickerView
@@ -13,49 +13,65 @@
         app:enableAlpha="true"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:minWidth="64dp"
-        android:textSize="14sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
+        android:minWidth="64dp"
         android:padding="8dp"
-        android:background="?android:selectableItemBackground"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/colorPickerView"
+        tools:text="Cancel" />
 
     <TextView
         android:id="@+id/ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:minWidth="64dp"
-        android:textSize="14sp"
-        android:gravity="center"
-        android:padding="8dp"
+        android:layout_marginEnd="16dp"
         android:background="?android:selectableItemBackground"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:gravity="center"
+        android:minWidth="64dp"
+        android:padding="8dp"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cancel"
+        tools:text="OK" />
 
     <View
         android:id="@+id/colorIndicator"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        app:layout_constraintLeft_toLeftOf="@+id/cancel"
-        app:layout_constraintRight_toRightOf="@+id/cancel"
-        app:layout_constraintTop_toBottomOf="@+id/cancel"/>
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toBottomOf="@id/cancel"
+        app:layout_constraintEnd_toStartOf="@id/colorHex"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cancel" />
 
     <TextView
         android:id="@+id/colorHex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/ok"
-        app:layout_constraintRight_toRightOf="@+id/ok"
-        app:layout_constraintTop_toBottomOf="@+id/ok"/>
+        android:layout_marginLeft="8dp"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/colorIndicator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/colorIndicator"
+        app:layout_constraintTop_toTopOf="@id/colorIndicator"
+        tools:text="0xFFFFFFFF" />
 
 </android.support.constraint.ConstraintLayout>
