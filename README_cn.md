@@ -10,7 +10,7 @@ Android颜色选择器。通过基于HSV颜色空间的调色盘和滑块来选�
 
 ```
 dependencies {
-    implementation 'com.github.jarryleo:colorpicker:2.0.0'
+    implementation 'com.github.jarryleo:colorpicker:2.0.1'
     ...
 }
 ```
