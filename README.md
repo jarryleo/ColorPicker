@@ -10,7 +10,7 @@ A `ColorPicker` for Android. Pick a color using color wheel and slider (HSV & al
 
 ```
 dependencies {
-    implementation 'com.github.duanhong169:colorpicker:${latestVersion}'
+    implementation 'com.github.jarryleo:colorpicker:2.0.0'
     ...
 }
 ```

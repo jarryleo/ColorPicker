@@ -1,15 +1,14 @@
 package top.defaults.colorpicker;
 
+import static top.defaults.colorpicker.Constants.SELECTOR_RADIUS_DP;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PointF;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
-
-import static top.defaults.colorpicker.Constants.SELECTOR_RADIUS_DP;
 
 public class ColorWheelSelector extends View {
 
@@ -21,11 +20,11 @@ public class ColorWheelSelector extends View {
         this(context, null);
     }
 
-    public ColorWheelSelector(Context context, @Nullable AttributeSet attrs) {
+    public ColorWheelSelector(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ColorWheelSelector(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public ColorWheelSelector(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         selectorPaint = new Paint(Paint.ANTI_ALIAS_FLAG);

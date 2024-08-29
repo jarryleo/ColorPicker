@@ -8,10 +8,8 @@ import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 
-import top.defaults.checkerboarddrawable.CheckerboardDrawable;
 
 public class AlphaSliderView extends ColorSliderView {
 
@@ -22,11 +20,11 @@ public class AlphaSliderView extends ColorSliderView {
         super(context);
     }
 
-    public AlphaSliderView(Context context, @Nullable AttributeSet attrs) {
+    public AlphaSliderView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public AlphaSliderView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public AlphaSliderView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

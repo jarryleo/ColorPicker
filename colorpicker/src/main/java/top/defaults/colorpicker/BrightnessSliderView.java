@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Shader;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 
 public class BrightnessSliderView extends ColorSliderView {
@@ -14,11 +13,11 @@ public class BrightnessSliderView extends ColorSliderView {
         super(context);
     }
 
-    public BrightnessSliderView(Context context, @Nullable AttributeSet attrs) {
+    public BrightnessSliderView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public BrightnessSliderView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public BrightnessSliderView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

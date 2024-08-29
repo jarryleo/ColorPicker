@@ -6,35 +6,40 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
 public abstract class ColorSliderView extends View implements ColorObservable, Updatable {
     protected int baseColor = Color.WHITE;
+    protected float selectorSize;
+    protected float currentValue = 1f;
     private Paint colorPaint;
     private Paint borderPaint;
     private Paint selectorPaint;
-
     private Path selectorPath;
     private Path currentSelectorPath = new Path();
-    protected float selectorSize;
-    protected float currentValue = 1f;
     private boolean onlyUpdateOnTouchEventUp;
 
     private ColorObservableEmitter emitter = new ColorObservableEmitter();
     private ThrottledTouchEventHandler handler = new ThrottledTouchEventHandler(this);
+    private ColorObserver bindObserver = new ColorObserver() {
+        @Override
+        public void onColor(int color, boolean fromUser, boolean shouldPropagate) {
+            setBaseColor(color, fromUser, shouldPropagate);
+        }
+    };
+    private ColorObservable boundObservable;
 
     public ColorSliderView(Context context) {
         this(context, null);
     }
 
-    public ColorSliderView(Context context, @Nullable AttributeSet attrs) {
+    public ColorSliderView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ColorSliderView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public ColorSliderView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         colorPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         borderPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -145,15 +150,6 @@ public abstract class ColorSliderView extends View implements ColorObservable, U
     public void setOnlyUpdateOnTouchEventUp(boolean onlyUpdateOnTouchEventUp) {
         this.onlyUpdateOnTouchEventUp = onlyUpdateOnTouchEventUp;
     }
-
-    private ColorObserver bindObserver = new ColorObserver() {
-        @Override
-        public void onColor(int color, boolean fromUser, boolean shouldPropagate) {
-            setBaseColor(color, fromUser, shouldPropagate);
-        }
-    };
-
-    private ColorObservable boundObservable;
 
     public void bind(ColorObservable colorObservable) {
         if (colorObservable != null) {

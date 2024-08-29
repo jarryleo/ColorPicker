@@ -1,16 +1,15 @@
 package top.defaults.colorpicker;
 
+import static top.defaults.colorpicker.Constants.SELECTOR_RADIUS_DP;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PointF;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-
-import static top.defaults.colorpicker.Constants.SELECTOR_RADIUS_DP;
 
 /**
  * HSV color wheel
@@ -36,11 +35,11 @@ public class ColorWheelView extends FrameLayout implements ColorObservable, Upda
         this(context, null);
     }
 
-    public ColorWheelView(Context context, @Nullable AttributeSet attrs) {
+    public ColorWheelView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ColorWheelView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public ColorWheelView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         selectorRadiusPx = SELECTOR_RADIUS_DP * getResources().getDisplayMetrics().density;
 

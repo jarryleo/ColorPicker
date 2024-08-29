@@ -7,7 +7,6 @@ import android.graphics.Paint;
 import android.graphics.RadialGradient;
 import android.graphics.Shader;
 import android.graphics.SweepGradient;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -24,11 +23,11 @@ public class ColorWheelPalette extends View {
         this(context, null);
     }
 
-    public ColorWheelPalette(Context context, @Nullable AttributeSet attrs) {
+    public ColorWheelPalette(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ColorWheelPalette(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public ColorWheelPalette(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         huePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         saturationPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
